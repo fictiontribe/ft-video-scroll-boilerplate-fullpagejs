@@ -1,0 +1,7 @@
+[build]
+entry = "src/index.js"
+outfile = "public/index.js"
+
+[serve]
+port = 4567
+serveDir = "public"

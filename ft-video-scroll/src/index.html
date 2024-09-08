@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Video Scroll Demo</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div id="video-container">
+            <video id="video-hero" muted playsinline preload="auto">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="loader-wrapper">
+            <div class="loader-number">0</div>
+        </div>
+
+        <div id="fullpage">
+            <section
+                id="section-1"
+                class="section"
+                data-anchor="section1"
+                data-loopstart="00:02:22"
+                data-loopend="00:05:23"
+                data-transitionstart="00:00:00"
+                data-transitionend="00:00:38"
+            >
+                <h2>Section 1</h2>
+            </section>
+            <section
+                id="section-2"
+                class="section"
+                data-anchor="section2"
+                data-loopstart="00:07:32"
+                data-loopend="00:10:41"
+                data-transitionstart="00:05:28"
+                data-transitionend="00:06:27"
+                data-transitionstartbackward="00:06:33"
+                data-transitionendbackward="00:07:26"
+                data-linked="1"
+            >
+                <h2>Section 2</h2>
+            </section>
+            <section
+                id="section-3"
+                class="section"
+                data-index="3"
+                data-loopstart="00:15:22"
+                data-loopend="00:17:43"
+                data-transitionstart="00:10:46"
+                data-transitionend="00:13:12"
+                data-transitionstartbackward="00:13:17"
+                data-transitionendbackward="00:15:12"
+            >
+                <h2>Section 3</h2>
+            </section>
+            <section
+                id="section-4"
+                class="section"
+                data-index="4"
+                data-loopstart="00:21:13"
+                data-loopend="00:24:20"
+                data-transitionstart="00:17:48"
+                data-transitionend="00:19:19"
+                data-transitionstartbackward="00:19:30"
+                data-transitionendbackward="00:21:06"
+            >
+                <h2>Section 4</h2>
+            </section>
+            <section
+                id="section-5"
+                class="section"
+                data-index="5"
+                data-loopstart="00:27:07"
+                data-loopend="00:30:16"
+                data-transitionstart="00:24:25"
+                data-transitionend="00:25:26"
+                data-transitionstartbackward="00:26:04"
+                data-transitionendbackward="00:26:28"
+                data-linked="4"
+            >
+                <h2>Section 5</h2>
+            </section>
+            <section
+                id="section-6"
+                class="section"
+                data-index="6"
+                data-loopstart="00:32:34"
+                data-loopend="00:36:09"
+                data-transitionstart="00:30:22"
+                data-transitionend="00:31:12"
+                data-transitionstartbackward="00:31:21"
+                data-transitionendbackward="00:32:22"
+            >
+                <h2>Section 6</h2>
+            </section>
+            <section
+                id="section-7"
+                class="section align-top-onmobile human-acquire"
+                data-index="7"
+                data-loopstart="00:40:19"
+                data-loopend="00:42:36"
+                data-transitionstart="00:36:15"
+                data-transitionend="00:38:12"
+                data-transitionstartbackward="00:38:19"
+                data-transitionendbackward="00:40:12"
+            >
+                <h2>Section 7</h2>
+            </section>
+            <section
+                id="section-8"
+                class="section align-top-onmobile"
+                data-index="8"
+                data-loopstart="00:49:02"
+                data-loopend="00:52:10"
+                data-transitionstart="00:42:39"
+                data-transitionend="00:46:05"
+                data-transitionstartbackward="00:46:07"
+                data-transitionendbackward="00:48:29"
+                data-linked="7"
+            >
+                <h2>Section 8</h2>
+            </section>
+            <section
+                id="section-9"
+                class="section align-bottom-onmobile testimonials-section glow-bg ipad-ui logo-main-sec"
+                data-index="9"
+            >
+                <h2>Section 9</h2>
+            </section>
+            <section
+                id="section-10"
+                class="section align-bottom-onmobile"
+                data-index="10"
+                data-loopstart="00:52:33"
+                data-loopend="00:55:99"
+                data-transitionstart="00:52:30"
+                data-transitionend="00:52:30"
+                data-transitionstartbackward="00:52:30"
+                data-transitionendbackward="00:52:30"
+            >
+                <h2>Section 10</h2>
+            </section>
+        </div>
+
+        <script type="module" src="index.js"></script>
+    </body>
+</html>

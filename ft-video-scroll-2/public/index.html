@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Video Scroll Demo</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css"
+        />
+        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css" />
+
+        <script src="http://localhost:4446"></script>
+    </head>
+    <body>
+        <div class="topbar">
+            <div class="wide-container-flex">
+                <div class="logo">ONO/SENDAI</div>
+                <div class="icons">
+                    <a href="#" class="icon-link">
+                        <img src="/assets/images/icons/settings.svg" alt="Settings" class="icon">
+                    </a>
+                    <a href="#" class="icon-link">
+                        <img src="/assets/images/icons/share.svg" alt="Share" class="icon">
+                    </a>
+                    <a href="#" class="kickstarter-button">Kickstarter</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="video-container">
+            <video id="video-hero" muted playsinline preload="auto">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div id="loader-container" class="loader-container">
+            <div id="lottie-loader"></div>
+            <div id="loader-percentage">0%</div>
+        </div>
+
+        <div class="navigation-arrows">
+            <div class="arrow arrow-up">↑</div>
+            <div class="arrow arrow-down">↓</div>
+        </div>
+
+        <!-- <div class="frame-navigation">
+            <div class="frame-button frame-button-up">
+                <div>Previous</div>
+            </div>
+            <div class="frame-button frame-button-down">
+                <div>Next</div>
+            </div>
+        </div> -->
+
+        <div id="fullpage">
+            <section
+                id="section-1"
+                class="section scrollable-section"
+                data-anchor="section1"
+                data-section-name="One"
+                data-loopstart="00:03:08"
+                data-loopend="00:07:11"
+                data-transitionstart="00:00:00"
+                data-transitionend="00:01:15"
+                data-transitionstartbackward="00:01:16"
+                data-transitionendbackward="00:03:07"
+                data-scrolltrigger="true"
+            >
+            <div class="content-wrapper">
+                <h2 class="section-title">The future <br>in your pocket.</h2>
+                <p class="section-text text-1">Immersive reality simulations.</p>
+                <p class="section-text text-2">Anywhere possibility.</p>
+            </div>
+                
+            </section>
+            <section
+                id="section-2"
+                class="section"
+                data-anchor="section2"
+                data-section-name="Two"
+                data-loopstart="00:11:26"
+                data-loopend="00:15:09"
+                data-transitionstart="00:07:12"
+                data-transitionend="00:09:13"
+                data-transitionstartbackward="00:09:14"
+                data-transitionendbackward="00:11:15"
+            >
+                <h2 class="section-title">Two</h2>
+                <p class="section-text">Second section content.</p>
+            </section>
+            <section
+                id="section-3"
+                class="section"
+                data-anchor="section3"
+                data-section-name="Three"
+                data-loopstart="00:18:28"
+                data-loopend="00:31:05"
+                data-transitionstart="00:15:10"
+                data-transitionend="00:17:01"
+                data-transitionstartbackward="00:17:02"
+                data-transitionendbackward="00:18:17"
+            >
+                <h2 class="section-title">Three</h2>
+                <p class="section-text">Third section content.</p>
+            </section>
+            <section
+                id="section-4"
+                class="section"
+                data-anchor="section4"
+                data-section-name="Four"
+                data-loopstart="00:34:24"
+                data-loopend="00:39:12"
+                data-transitionstart="00:31:06"
+                data-transitionend="00:31:40"
+                data-transitionstartbackward="00:32:32"
+                data-transitionendbackward="00:34:13"
+            >
+                <h2 class="section-title">Four</h2>
+                <p class="section-text">Fourth section content.</p>
+            </section>
+            <section
+                id="section-5"
+                class="section"
+                data-anchor="section5"
+                data-section-name="Five"
+                data-loopstart="00:46:17"
+                data-loopend="00:47:21"
+                data-transitionstart="00:39:13"
+                data-transitionend="00:42:21"
+                data-transitionstartbackward="00:42:22"
+                data-transitionendbackward="00:46:06"
+            >
+                <h2 class="section-title">Five</h2>
+                <p class="section-text">Fifth section content.</p>
+            </section>
+            <section
+                id="section-6"
+                class="section"
+                data-anchor="section6"
+                data-section-name="Six"
+                data-loopstart="00:51:16"
+                data-loopend="00:52:22"
+                data-transitionstart="00:47:22"
+                data-transitionend="00:49:13"
+                data-transitionstartbackward="00:49:14"
+                data-transitionendbackward="00:51:05"
+            >
+                <h2 class="section-title">Six</h2>
+                <p class="section-text">Sixth section content.</p>
+            </section>
+            <section
+                id="section-7"
+                class="section"
+                data-anchor="section7"
+                data-section-name="Seven"
+                data-loopstart="00:56:17"
+                data-loopend="00:57:21"
+                data-transitionstart="00:52:23"
+                data-transitionend="00:54:14"
+                data-transitionstartbackward="00:54:15"
+                data-transitionendbackward="00:56:06"
+            >
+                <h2 class="section-title">Seven</h2>
+                <p class="section-text">Seventh section content.</p>
+            </section>
+            <section
+                id="section-8"
+                class="section"
+                data-anchor="section8"
+                data-section-name="Eight"
+                data-loopstart="01:01:15"
+                data-loopend="01:04:14"
+                data-transitionstart="00:57:22"
+                data-transitionend="00:59:13"
+                data-transitionstartbackward="00:59:14"
+                data-transitionendbackward="01:01:05"
+            >
+                <h2 class="section-title">Eight</h2>
+                <p class="section-text">Eighth section content.</p>
+            </section>
+            <section
+                id="section-9"
+                class="section"
+                data-anchor="section9"
+                data-section-name="Nine"
+                data-loopstart="01:06:13"
+                data-loopend="01:07:20"
+                data-transitionstart="01:04:15"
+                data-transitionend="01:05:08"
+                data-transitionstartbackward="01:05:09"
+                data-transitionendbackward="01:06:02"
+            >
+                <h2 class="section-title">Nine</h2>
+                <p class="section-text">Ninth section content.</p>
+            </section>
+            <section
+                id="section-10"
+                class="section"
+                data-anchor="section10"
+                data-section-name="Ten"
+                data-loopstart="01:14:18"
+                data-loopend="01:16:15"
+                data-transitionstart="01:07:21"
+                data-transitionend="01:11:01"
+                data-transitionstartbackward="01:11:02"
+                data-transitionendbackward="01:14:05"
+            >
+                <h2 class="section-title">Ten</h2>
+                <p class="section-text">Tenth section content.</p>
+            </section>
+            <section
+                id="section-11"
+                class="section"
+                data-anchor="section11"
+                data-section-name="Eleven"
+                data-loopstart="01:18:34"
+                data-loopend="01:22:14"
+                data-transitionstart="01:16:16"
+                data-transitionend="01:17:14"
+                data-transitionstartbackward="01:17:15"
+                data-transitionendbackward="01:18:13"
+            >
+                <h2 class="section-title">Eleven</h2>
+                <p class="section-text">Eleventh section content.</p>
+            </section>
+            <section
+                id="section-12"
+                class="section"
+                data-anchor="section12"
+                data-section-name="Twelve"
+                data-loopstart="01:26:15"
+                data-loopend="01:28:13"
+                data-transitionstart="01:22:15"
+                data-transitionend="01:24:09"
+                data-transitionstartbackward="01:24:10"
+                data-transitionendbackward="01:26:04"
+            >
+                <h2 class="section-title">Twelve</h2>
+                <p class="section-text">Twelfth section content.</p>
+            </section>
+            <section
+                id="section-13"
+                class="section"
+                data-anchor="section13"
+                data-section-name="Thirteen"
+                data-loopstart="01:32:15"
+                data-loopend="01:34:17"
+                data-transitionstart="01:28:14"
+                data-transitionend="01:30:09"
+                data-transitionstartbackward="01:30:10"
+                data-transitionendbackward="01:32:04"
+            >
+                <h2 class="section-title">Thirteen</h2>
+                <p class="section-text">Thirteenth section content.</p>
+            </section>
+            <section
+                id="section-14"
+                class="section"
+                data-anchor="section14"
+                data-section-name="Fourteen"
+                data-loopstart="01:38:32"
+                data-loopend="01:40:13"
+                data-transitionstart="01:34:18"
+                data-transitionend="01:36:20"
+                data-transitionstartbackward="01:36:21"
+                data-transitionendbackward="01:38:21"
+            >
+                <h2 class="section-title">Fourteen</h2>
+                <p class="section-text">Fourteenth section content.</p>
+            </section>
+            <section
+                id="section-15"
+                class="section"
+                data-anchor="section15"
+                data-section-name="Fifteen"
+                data-loopstart="01:43:30"
+                data-loopend="01:47:22"
+                data-transitionstart="01:40:14"
+                data-transitionend="01:42:04"
+                data-transitionstartbackward="01:42:05"
+                data-transitionendbackward="01:43:19"
+            >
+                <h2 class="section-title">Fifteen</h2>
+                <p class="section-text">Fifteenth section content.</p>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="scroll-indicator">
+              <div class="scroll-indicator-background"></div>
+              <span class="scroll-text">Scroll to Explore</span>
+            </div>
+            <div class="autoscroll-toggle">
+              <label class="switch">
+                <input type="checkbox" id="autoscrollToggle" checked>
+                <span class="slider round"></span>
+              </label>
+              <span class="toggle-label">Autoscroll</span>
+            </div>
+        </footer>
+
+        <script type="module" src="index.js"></script>
+    </body>
+</html>

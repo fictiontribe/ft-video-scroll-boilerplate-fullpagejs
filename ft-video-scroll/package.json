@@ -1,0 +1,23 @@
+{
+  "name": "video-scroll-demo",
+  "version": "1.0.0",
+  "description": "Video scrolling demo with Fullpage.js",
+  "type": "module",
+  "scripts": {
+    "start": "parcel serve src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fullpage.js": "^4.0.20"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

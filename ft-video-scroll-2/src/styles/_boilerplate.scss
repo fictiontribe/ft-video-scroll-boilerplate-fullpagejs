@@ -1,0 +1,451 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* font-family: "Syne", sans-serif; */
+    font-family: 'Gilroy';
+    background-color: #000;
+    color: #fff;
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    .content-wrapper {
+        height: 100vh;
+    }
+}
+
+.scrollable-section {
+    overflow-y: auto !important;
+    height: auto !important; /* Allow the section to expand */
+}
+
+#video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+#lottie-loader {
+    width: 200px;
+    height: 200px;
+}
+
+#loader-percentage {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.section-title {
+    font-size: 84px;
+    font-weight: 700;
+    opacity: 0;
+    margin: 0 auto 1rem auto 0;
+    /* transition:
+        opacity 0.5s ease-out,
+        transform 0.5s ease-out; */
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+}
+
+.section-text {
+    font-size: 1.5rem;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(-30px);
+    /* transition:
+        opacity 0.5s ease-out 0.2s,
+        transform 0.5s ease-out 0.2s; */
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+}
+
+/* Navigation Arrows */
+.navigation-arrows {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.arrow {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Frame Navigation Buttons */
+.frame-navigation {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.frame-button {
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 0, 255, 0.1);
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 2px;
+    overflow: hidden;
+}
+
+.frame-button div {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.frame-button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.frame-button:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.frame-button:hover:before {
+    transform: translateY(0);
+}
+
+.frame-button:hover div {
+    transform: scale(1.05);
+}
+
+.frame-button-up {
+    top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.frame-button-up:before {
+    transform: translateY(100%);
+}
+
+.frame-button-down:before {
+    transform: translateY(-100%);
+}
+
+.frame-button-down {
+    bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Left Menu Indicator */
+/* #fp-nav {
+    left: 40px !important;
+}
+
+#fp-nav ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#fp-nav ul::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-50%);
+}
+
+#fp-nav ul li,
+.fp-slidesNav ul li {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 15px 0;
+    position: relative;
+}
+
+#fp-nav ul li a,
+.fp-slidesNav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    display: none;
+}
+
+#fp-nav ul li a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+#fp-nav ul li .fp-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    color: #ffffff;
+    font-family: "Syne", sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+    max-width: none;
+    overflow: visible;
+    display: block;
+    opacity: 0;
+    width: auto;
+    cursor: default;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+#fp-nav ul li a.active + .fp-tooltip {
+    opacity: 1;
+} */
+
+#fp-nav ul li {
+    margin: 8px 7px; /* Increased vertical margin for more space between dots */
+}
+
+#fp-nav ul li a span {
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    height: 8px;
+    width: 8px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.5);
+    left: 50%;
+    top: 50%;
+    margin: -4px 0 0 -4px;
+    transition: all 0.1s ease-in-out;
+}
+
+#fp-nav ul li a.active span {
+    height: 30px;
+    width: 8px;
+    margin: -15px 0 0 -4px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3); /* Very light grey background */
+    overflow: hidden;
+}
+
+#fp-nav ul li a.active span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    height: 0%;
+    transition: height 5s linear;
+}
+
+#fp-nav ul li a.active.fill span::after {
+    height: 100%;
+}
+
+/* Adjust positioning of dots around the active indicator */
+#fp-nav ul li:has(+ li a.active) {
+    margin-bottom: 16px; /* Push the dot above the active indicator down */
+}
+
+#fp-nav ul li:has(a.active) + li {
+    margin-top: 16px; /* Push the dot below the active indicator up */
+}
+
+/* Ensure only one active indicator is visible */
+#fp-nav ul li a.active:not(.fill) span::after {
+    height: 0%;
+}
+
+@media (max-width: 768px) {
+    #fp-nav {
+        left: 20px !important;
+    }
+}
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 3rem;
+    }
+    .section-text {
+        font-size: 1.2rem;
+    }
+    .navigation-arrows {
+        right: 20px;
+    }
+    #fp-nav {
+        left: 20px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust section title font size */
+    .section-title {
+        font-size: 2.5rem; /* Reduced from 4rem */
+    }
+
+    /* Adjust section text font size */
+    .section-text {
+        font-size: 1rem; /* Reduced from 1.5rem */
+        max-width: 90%; /* Ensure text doesn't overflow on smaller screens */
+    }
+
+    /* Hide text in left indicator */
+    #fp-nav ul li .fp-tooltip {
+        display: none;
+    }
+
+    /* Adjust left indicator position */
+    #fp-nav.fp-left {
+        left: 10px !important;
+    }
+
+    /* Adjust navigation arrows size and position */
+    .navigation-arrows .arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .navigation-arrows {
+        right: 10px;
+    }
+
+    /* Adjust frame buttons */
+    .frame-button {
+        height: 60px;
+    }
+
+    .frame-button-up {
+        top: 10px;
+    }
+
+    .frame-button-down {
+        bottom: 10px;
+    }
+
+    /* Ensure content is centered and doesn't overflow */
+    .section {
+        padding: 0 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Adjust 'PREVIOUS' and 'NEXT' text */
+    .frame-button div {
+        font-size: 0.8rem;
+    }
+}
+
+/* Additional styles for very small screens */
+@media screen and (max-width: 320px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation for active section */
+.section.active .section-title,
+.section.active .section-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth transition for video */
+.fp-viewing-firstPage video {
+    transform: scale(1.05);
+}
+
+#section-9 {
+    /* background: red; */
+}

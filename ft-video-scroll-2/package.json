@@ -1,0 +1,23 @@
+{
+  "name": "video-scroll-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "build:js": "bun build ./src/index.js --outdir ./public/",
+    "build:css": "sass src/styles/styles.scss:public/styles.css",
+    "build": "bun run build:js && bun run build:css",
+    "serve": "bun run server.js",
+    "watch:js": "bun build ./src/index.js --outdir ./public/ --watch",
+    "watch:css": "sass --watch src/styles/styles.scss:public/styles.css",
+    "dev": "bun run build && concurrently \"bun run watch:js\" \"bun run watch:css\" \"bun run serve\""
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "fullpage.js": "^4.0.20",
+    "gsap": "^3.12.5",
+    "lottie-web": "^5.12.2"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "concurrently": "^8.2.0"
+  }
+}
